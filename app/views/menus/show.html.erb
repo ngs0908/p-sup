@@ -1,0 +1,60 @@
+<main class="main">
+  <div class="inner">
+    <div class="menu__wrapper">
+      <p class="menu__hedding">
+        <%= @menu.title %>
+      </p>
+      <%= link_to "by #{@menu.user.name}", user_path(@menu.user), class: :menu__user %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+        <div class="menu__manage">
+          <% if user_signed_in? && current_user == @menu.user %>
+            <%= link_to "編集する", edit_menu_path(@menu.id), class: :menu__btn %>
+            <%= link_to "削除する", menu_path(@menu.id), data: { turbo_method: :delete }, class: :menu__btn %>
+          <% end %>
+        </div>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="menu__image">
+        <%= image_tag @menu.image, class: "menu__image" %>
+      </div>
+      <div class="menu__body">
+        <div class="menu__detail">
+          <p class="detail__title">総カロリー</p>
+          <p class="detail__message">
+            <%= @menu.catch_copy %>
+          </p>
+        </div>
+        <div class="menu__detail">
+          <p class="detail__title">栄養素</p>
+          <p class="detail__message">
+            <%= @menu.concept %>
+          </p>
+        </div>
+      </div>
+      <div class="menu__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+        <% if user_signed_in? %>
+          <%= form_with model: [@menu, @comment], url: menu_comments_path(@menu), local: true do |f|%>
+            <div class="field">
+              <%= f.label :comment, "コメント" %><br />
+              <%= f.text_field :content, id:"comment_content" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %>
+        <% end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% @menu.comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.content %>
+              <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
+            </li>
+          <% end %>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>

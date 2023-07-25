@@ -1,0 +1,12 @@
+<% @menus.each do |menu| %>
+<div class="card">
+    <%= link_to image_tag(menu.image, class: :card__img ), menu_path(menu)%>
+  <div class="card__body">
+    <%= link_to menu.title, root_path, class: :card__title %>
+    <p class="card__summary">
+      <%= menu.catch_copy %>
+      </p>
+        <%= link_to "by #{menu.user.name}", user_path(menu.user.id), class: :card__user %>
+    </div>
+  </div>
+<% end %>

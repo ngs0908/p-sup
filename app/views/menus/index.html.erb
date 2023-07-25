@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="sub">
+    <div class="inner">
+      <div class="toppage"> トップページ </div>
+        <% if user_signed_in? %>
+          <div class="greeting">
+            <%= link_to "#{current_user.name}さん", user_path(current_user.id), class: :greeting__link%> の食事内容です！
+          </div>
+        <% end %>  
+        <div class="card__wrapper">
+          <%= render partial: "menu", locals: { menu: @menu } %>
+      </div>
+    </div>
+  </div>
+</main>
