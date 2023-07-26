@@ -54,6 +54,13 @@ a {
 .logo {
   width: 200px;
 }
+
+.nav__right {
+  display: flex;
+  justify-content: center; /* 子要素を水平方向に中央に配置 */
+  align-items: center; /* 子要素を垂直方向に中央に配置 */
+}
+
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -65,6 +72,7 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__btn:hover{
   color: #fff;
   background: #87CEFA;
@@ -78,6 +86,7 @@ a {
   text-decoration: none;
   user-select: none;
 }
+
 .nav__logout:hover{
   opacity: 0.5;
 }
@@ -121,7 +130,8 @@ a {
 /* メイン */
 .main{
   background-image: url('sample.PNG');
-  height: 800px;
+  height: 100%;
+  width: 100%;
   background-size: cover;
 }
 
@@ -191,11 +201,19 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-.menu__image{
+
+.menu__image {
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
+
+.menu__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .menu__detail{
   display: flex;
   align-items: center;

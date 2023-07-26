@@ -23,7 +23,7 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menue.find(params[:id])
+    @menu = Menu.find(params[:id])
     @comment = Comment.new
     @comments = @menu.comments.includes(:user)
   end
@@ -52,7 +52,7 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
+    params.require(:menu).permit(:title, :calorie, :nutrient, :image).merge(user_id: current_user.id)
   end
 
   def set_menu

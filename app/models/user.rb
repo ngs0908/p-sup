@@ -5,14 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :comments
-  validates :name, :profile, :occupation, :position, presence: true
+  validates :name, :profile, :age, :gender, presence: true
 
-  # attribute :name, :string
-  # attr_accessor :name
-  # attribute :profile, :string
-  # attr_accessor :profile
-  # attribute :occupation, :string
-  # attr_accessor :occupation
-  # attribute :position, :string
-  # attr_accessor :position
 end

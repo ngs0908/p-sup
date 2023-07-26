@@ -5,8 +5,8 @@ class Menu < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true
-  validates :catch_copy, presence: true
-  validates :concept, presence: true
+  validates :calorie, presence: true
+  validates :nutrient, presence: true
   validate :validate_image_presence
 
   private

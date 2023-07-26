@@ -16,16 +16,16 @@
           </tr>
           <tr>
             <th class="table__col1">年齢</th>
-            <td class="table__col2"><%= "#{@user.occupation}" %></td>
+            <td class="table__col2"><%= "#{@user.age}" %></td>
           </tr>
           <tr>
             <th class="table__col1">性別</th>
-            <td class="table__col2"><%= "#{@user.position}" %></td>
+            <td class="table__col2"><%= "#{@user.gender}" %></td>
           </tr>
         </tbody>
       </table>
       <h2 class="page-heading">
-        <%= "#{@user.name}さんのプロトタイプ"%>
+        <%= "#{@user.name}さんの食事内容一覧"%>
       </h2>
       <div class="user__card">
         <%= render partial: "menus/menu" %>

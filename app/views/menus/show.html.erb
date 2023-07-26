@@ -5,14 +5,14 @@
         <%= @menu.title %>
       </p>
       <%= link_to "by #{@menu.user.name}", user_path(@menu.user), class: :menu__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%# 食事の投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="menu__manage">
           <% if user_signed_in? && current_user == @menu.user %>
             <%= link_to "編集する", edit_menu_path(@menu.id), class: :menu__btn %>
             <%= link_to "削除する", menu_path(@menu.id), data: { turbo_method: :delete }, class: :menu__btn %>
           <% end %>
         </div>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <%# // 食事の投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="menu__image">
         <%= image_tag @menu.image, class: "menu__image" %>
       </div>
@@ -20,13 +20,13 @@
         <div class="menu__detail">
           <p class="detail__title">総カロリー</p>
           <p class="detail__message">
-            <%= @menu.catch_copy %>
+            <%= @menu.calorie %>
           </p>
         </div>
         <div class="menu__detail">
           <p class="detail__title">栄養素</p>
           <p class="detail__message">
-            <%= @menu.concept %>
+            <%= @menu.nutrient %>
           </p>
         </div>
       </div>
