@@ -42,7 +42,6 @@ P-sup
 ## データベース設計
 - [![Image from Gyazo](https://i.gyazo.com/7905a705a68492aab5dec06a7628125f.png)](https://gyazo.com/7905a705a68492aab5dec06a7628125f)
 
-
 ### usersテーブル
 
 | Column             | Type    | Options                    |
