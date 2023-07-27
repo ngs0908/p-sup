@@ -35,9 +35,6 @@ P-sup
 [![Image from Gyazo](https://i.gyazo.com/3c842609138ce75b9d347639ca9e63fa.png)](https://gyazo.com/3c842609138ce75b9d347639ca9e63fa)
 [![Image from Gyazo](https://i.gyazo.com/48041ffeb7992cde110e387012440fd1.png)](https://gyazo.com/48041ffeb7992cde110e387012440fd1)
 
-![ToDoの追加と編集](https://example.com/images/add_edit_todo.gif)
-![ToDoの完了](https://example.com/images/complete_todo.png)
-
 ## 実装予定の機能
 - カテゴリー分類機能の追加: activehash、Javascriptを導入することで、さらに使いやすくなると考えています。
 - カロリー集計機能: 1日のカロリー、タンパク質の摂取量を自動計算する機能を実装予定です。
