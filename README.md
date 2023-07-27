@@ -40,8 +40,7 @@ P-sup
 - カロリー集計機能: 1日のカロリー、タンパク質の摂取量を自動計算する機能を実装予定です。
 
 ## データベース設計
-- app/er.dio
-- 上記に記述
+- [![Image from Gyazo](https://i.gyazo.com/7905a705a68492aab5dec06a7628125f.png)](https://gyazo.com/7905a705a68492aab5dec06a7628125f)
 
 
 ### usersテーブル
