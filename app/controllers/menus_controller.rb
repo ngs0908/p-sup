@@ -3,7 +3,7 @@ class MenusController < ApplicationController
   before_action :set_menu, only: [:edit, :update]
 
   def index
-    @menu = Menu.all
+    # @menu = Menu.all
     @menus = Menu.all
     @menu = @menus.first
   end
