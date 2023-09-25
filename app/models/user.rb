@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :comments
   validates :name, :profile, :age, :gender, presence: true
 
+
 end
